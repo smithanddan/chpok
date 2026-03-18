@@ -1,0 +1,7 @@
+project_id = "chpok-local"
+[api]
+enabled = true
+
+[db]
+shadow_enabled = true
+

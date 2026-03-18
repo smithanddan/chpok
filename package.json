@@ -1,0 +1,24 @@
+{
+  "name": "chpok-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Chpok – mobile-first civic-tech app for fast urban incident reporting with admin panel.",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "supabase"
+  ],
+  "scripts": {
+    "dev:mobile": "cd apps/mobile && expo start",
+    "dev:admin": "cd apps/admin && next dev",
+    "lint": "echo \"No root lint configured yet\"",
+    "typecheck": "tsc -p tsconfig.base.json --noEmit"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

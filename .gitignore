@@ -1,0 +1,33 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+billing.db
+.env.local
+.env.*.local
+
+# Node / Next / Expo
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.next/
+**/.next/
+out/
+build/
+dist/
+.expo/
+
+# Turbopack / Next caches
+.turbo/
+**/.turbo/
+.swc/
+
+# macOS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+node_modules
