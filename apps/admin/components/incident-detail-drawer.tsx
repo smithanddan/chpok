@@ -464,11 +464,14 @@ export function IncidentDetailDrawer({ incidentId, onClose }: Props) {
                           .single();
                         if (error) throw error;
 
+                        const profile = Array.isArray(data.profiles)
+                          ? data.profiles[0]
+                          : data.profiles;
                         const newNote = {
                           id: data.id as string,
                           note: data.note as string,
                           created_at: data.created_at as string,
-                          author_name: data.profiles?.display_name ?? null
+                          author_name: profile?.display_name ?? null
                         };
 
                         setState({

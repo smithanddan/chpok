@@ -113,6 +113,12 @@ export async function fetchIncidentDetail(id: string): Promise<IncidentDetail | 
     console.error("Failed to fetch admin notes", notesRes.error);
   }
 
+  const companyRel = report.companies;
+  const company = Array.isArray(companyRel) ? companyRel[0] : companyRel;
+  const userProfile = Array.isArray(report.profiles)
+    ? report.profiles[0]
+    : report.profiles;
+
   return {
     id: report.id,
     short_id: (report.id as string).slice(0, 8),
@@ -121,13 +127,13 @@ export async function fetchIncidentDetail(id: string): Promise<IncidentDetail | 
     submitted_at: report.submitted_at ?? null,
     violation_type: report.violation_type ?? null,
     object_type: report.object_type ?? null,
-    company_name: report.companies?.name ?? null,
+    company_name: company?.name ?? null,
     address_text: report.address_text ?? null,
     lat: report.lat ?? null,
     lng: report.lng ?? null,
     is_anonymous: !!report.is_anonymous,
     description: report.description ?? null,
-    user_display_name: report.profiles?.display_name ?? null,
+    user_display_name: userProfile?.display_name ?? null,
     media:
       mediaRes.data?.map((m) => ({
         id: m.id as string,

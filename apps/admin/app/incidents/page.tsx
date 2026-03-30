@@ -68,7 +68,6 @@ export default function IncidentsPage({
           </div>
         }
       >
-        {/* @ts-expect-error Async Server Component */}
         <IncidentsTable searchParams={searchParams} />
       </Suspense>
     </CrmShell>
