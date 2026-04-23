@@ -11,6 +11,8 @@
   "scripts": {
     "dev:mobile": "cd apps/mobile && expo start",
     "dev:admin": "cd apps/admin && next dev",
+    "dev:landing": "cd apps/landing && npm run dev",
+    "build:landing": "cd apps/landing && npm run build",
     "lint": "echo \"No root lint configured yet\"",
     "typecheck": "tsc -p tsconfig.base.json --noEmit"
   },
