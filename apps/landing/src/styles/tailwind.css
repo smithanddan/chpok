@@ -1,0 +1,7 @@
+@import 'tailwindcss' source(none);
+/* Явные пути — если glob в монорепе не сработал, классы не попадали бы в CSS (страница без стилей). */
+@source '../main.tsx';
+@source '../app/**/*.{js,ts,jsx,tsx}';
+@source '../imports/**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css';
