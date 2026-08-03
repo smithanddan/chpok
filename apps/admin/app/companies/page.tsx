@@ -1,15 +1,13 @@
 import { CrmShell } from "../../components/crm-shell";
+import { EmptyWorkspace } from "../../components/empty-workspace";
 
 export default function CompaniesPage() {
   return (
     <CrmShell
       pageTitle="Компании"
-      pageDescription="Справочник обслуживающих организаций и подрядчиков. Здесь позже появятся категории и счетчики инцидентов."
+      pageDescription="Кому передаём сигнал и кто помогает городу реагировать."
     >
-      <div className="flex h-full items-center justify-center text-sm text-slate-400">
-        Таблица компаний пока не реализована. Страница подготовлена под будущий список.
-      </div>
+      <EmptyWorkspace eyebrow="маршрутизация" title="Нужные контакты — в одном месте." text="Здесь будет справочник операторов, подрядчиков и городских служб с категориями обращений и скоростью ответа." />
     </CrmShell>
   );
 }
-

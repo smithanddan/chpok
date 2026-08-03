@@ -25,7 +25,7 @@ export default function Index() {
   if (!ready) {
     return (
       <View style={styles.loading}>
-        <ActivityIndicator color="#FF2D8A" />
+        <ActivityIndicator color="#FF418E" />
         <Text style={styles.loadingText}>Запускаем Chpok…</Text>
       </View>
     );
@@ -41,13 +41,13 @@ export default function Index() {
 const styles = StyleSheet.create({
   loading: {
     flex: 1,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     alignItems: "center",
     justifyContent: "center",
     gap: 8
   },
   loadingText: {
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 13
   }
 });

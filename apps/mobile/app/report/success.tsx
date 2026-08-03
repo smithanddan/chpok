@@ -5,22 +5,22 @@ export default function SuccessScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}>Thank you for your signal</Text>
+        <Text style={styles.title}>Сигнал отправлен</Text>
         <Text style={styles.subtitle}>
-          Your report has been sent to the city team. You can track it in “My
-          reports”.
+          Обращение ушло на проверку. Статус будет меняться в разделе «Мои
+          обращения».
         </Text>
       </View>
 
       <View style={styles.actions}>
         <Link href="/reports" replace asChild>
           <TouchableOpacity style={styles.primaryButton}>
-            <Text style={styles.primaryButtonText}>Go to My reports</Text>
+            <Text style={styles.primaryButtonText}>К моим обращениям</Text>
           </TouchableOpacity>
         </Link>
         <Link href="/" replace asChild>
           <TouchableOpacity style={styles.secondaryButton}>
-            <Text style={styles.secondaryButtonText}>Back to home</Text>
+            <Text style={styles.secondaryButtonText}>На главную</Text>
           </TouchableOpacity>
         </Link>
       </View>
@@ -34,51 +34,50 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 32,
     paddingBottom: 24,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     justifyContent: "space-between"
   },
   card: {
     borderRadius: 28,
     padding: 24,
-    backgroundColor: "#0B1220"
+    backgroundColor: "#FFFFFF"
   },
   title: {
     fontSize: 24,
     fontWeight: "700",
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   subtitle: {
     marginTop: 12,
     fontSize: 14,
-    color: "#E5E7EB",
+    color: "#35435B",
     lineHeight: 20
   },
   actions: {
     gap: 12
   },
   primaryButton: {
-    backgroundColor: "#FF2D8A",
+    backgroundColor: "#FF418E",
     borderRadius: 999,
     paddingVertical: 18,
     alignItems: "center"
   },
   primaryButtonText: {
-    color: "#020617",
+    color: "#FFF8ED",
     fontWeight: "700",
     fontSize: 16
   },
   secondaryButton: {
     borderRadius: 999,
     borderWidth: 1,
-    borderColor: "#374151",
+    borderColor: "#AAB3C0",
     paddingVertical: 16,
     alignItems: "center",
-    backgroundColor: "#020617"
+    backgroundColor: "#FFF8ED"
   },
   secondaryButtonText: {
-    color: "#E5E7EB",
+    color: "#35435B",
     fontSize: 15,
     fontWeight: "500"
   }
 });
-

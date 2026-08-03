@@ -72,12 +72,12 @@ function StatusBadge({ status }: { status: string }) {
   const label = STATUS_LABELS[status] ?? status;
   const color =
     status === "resolved"
-      ? "#22C55E"
+      ? "#269B67"
       : status === "rejected"
-      ? "#F97373"
+      ? "#E96C66"
       : status === "draft"
-      ? "#9CA3AF"
-      : "#FBBF24";
+      ? "#67758C"
+      : "#DEA920";
 
   return (
     <View style={[styles.statusBadge, { borderColor: color }]}>
@@ -160,7 +160,7 @@ export default function ReportDetailScreen() {
   if (loading) {
     return (
       <View style={styles.loading}>
-        <ActivityIndicator color="#FF2D8A" />
+        <ActivityIndicator color="#FF418E" />
         <Text style={styles.loadingText}>Загружаем ваш чпок…</Text>
       </View>
     );
@@ -289,17 +289,17 @@ export default function ReportDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#020617"
+    backgroundColor: "#FFF8ED"
   },
   loading: {
     flex: 1,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     alignItems: "center",
     justifyContent: "center",
     gap: 8
   },
   loadingText: {
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 13,
     textAlign: "center",
     paddingHorizontal: 32
@@ -307,14 +307,14 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 22,
     fontWeight: "700",
-    color: "#F9FAFB",
+    color: "#17233B",
     marginBottom: 16
   },
   statusBlock: {
     borderRadius: 18,
     paddingVertical: 12,
     paddingHorizontal: 16,
-    backgroundColor: "#0B1220",
+    backgroundColor: "#FFFFFF",
     marginBottom: 12
   },
   statusHeader: {
@@ -336,19 +336,19 @@ const styles = StyleSheet.create({
   },
   statusDate: {
     fontSize: 11,
-    color: "#9CA3AF"
+    color: "#67758C"
   },
   statusHelp: {
     marginTop: 4,
     fontSize: 12,
-    color: "#E5E7EB",
+    color: "#35435B",
     lineHeight: 18
   },
   row: {
     borderRadius: 18,
     paddingVertical: 12,
     paddingHorizontal: 16,
-    backgroundColor: "#0B1220",
+    backgroundColor: "#FFFFFF",
     marginBottom: 10,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -356,11 +356,11 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 13,
-    color: "#9CA3AF"
+    color: "#67758C"
   },
   value: {
     fontSize: 14,
-    color: "#F9FAFB",
+    color: "#17233B",
     fontWeight: "500",
     textAlign: "right",
     flexShrink: 1,
@@ -371,13 +371,13 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     paddingVertical: 12,
     paddingHorizontal: 16,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#1F2937"
+    borderColor: "#D9DDE3"
   },
   description: {
     marginTop: 6,
-    color: "#E5E7EB",
+    color: "#35435B",
     fontSize: 14,
     lineHeight: 20
   },
@@ -387,12 +387,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 14,
     fontWeight: "600",
-    color: "#F9FAFB",
+    color: "#17233B",
     marginBottom: 6
   },
   sectionText: {
     fontSize: 13,
-    color: "#9CA3AF",
+    color: "#67758C",
     lineHeight: 18
   },
   mediaGrid: {
@@ -405,23 +405,23 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 12,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#1F2937",
+    borderColor: "#D9DDE3",
     alignItems: "center",
     justifyContent: "center"
   },
   mediaLabel: {
     fontSize: 11,
-    color: "#9CA3AF"
+    color: "#67758C"
   },
   historyRow: {
     borderRadius: 14,
     paddingVertical: 8,
     paddingHorizontal: 12,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#1F2937",
+    borderColor: "#D9DDE3",
     marginTop: 6,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -429,16 +429,16 @@ const styles = StyleSheet.create({
   },
   historyStatus: {
     fontSize: 12,
-    color: "#E5E7EB"
+    color: "#35435B"
   },
   historyComment: {
     marginTop: 2,
     fontSize: 11,
-    color: "#9CA3AF"
+    color: "#67758C"
   },
   historyDate: {
     fontSize: 11,
-    color: "#6B7280",
+    color: "#8A95A5",
     textAlign: "right"
   }
 });

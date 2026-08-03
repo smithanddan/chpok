@@ -1,15 +1,13 @@
 import { CrmShell } from "../../components/crm-shell";
+import { EmptyWorkspace } from "../../components/empty-workspace";
 
 export default function UsersPage() {
   return (
     <CrmShell
       pageTitle="Пользователи"
-      pageDescription="Список пользователей Chpok. В следующем шаге сюда можно добавить роли, активность и счетчики инцидентов."
+      pageDescription="Жители, модераторы и их вклад в порядок города."
     >
-      <div className="flex h-full items-center justify-center text-sm text-slate-400">
-        Таблица пользователей пока не реализована. Страница подготовлена под будущий список.
-      </div>
+      <EmptyWorkspace eyebrow="люди чпока" title="Здесь появятся те, кто замечает." text="Подключим профиль, роли и историю обращений. Пока сигналы можно вести без публичного профиля — важнее сама ситуация." />
     </CrmShell>
   );
 }
-

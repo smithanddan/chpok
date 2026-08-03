@@ -14,14 +14,14 @@ function TabIcon({
         paddingHorizontal: 12,
         paddingVertical: 6,
         borderRadius: 999,
-        backgroundColor: focused ? "#FF2D8A" : "transparent"
+        backgroundColor: focused ? "#FF418E" : "transparent"
       }}
     >
       <Text
         style={{
           fontSize: 11,
           fontWeight: "700",
-          color: focused ? "#020617" : "#9CA3AF"
+          color: focused ? "#FFF8ED" : "#67758C"
         }}
       >
         {label}
@@ -36,8 +36,8 @@ export default function TabsLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#020617",
-          borderTopColor: "#111827",
+          backgroundColor: "#FFF8ED",
+          borderTopColor: "#E9E3D7",
           height: 64,
           paddingBottom: 12,
           paddingTop: 8

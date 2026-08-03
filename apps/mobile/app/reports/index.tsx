@@ -38,12 +38,12 @@ function StatusBadge({ status }: { status: string }) {
   const label = STATUS_LABELS[status] ?? status;
   const color =
     status === "resolved"
-      ? "#22C55E"
+      ? "#269B67"
       : status === "rejected"
-      ? "#F97373"
+      ? "#E96C66"
       : status === "draft"
-      ? "#9CA3AF"
-      : "#FBBF24";
+      ? "#67758C"
+      : "#DEA920";
 
   return (
     <View style={[styles.statusBadge, { borderColor: color }]}>
@@ -161,7 +161,7 @@ export default function MyReportsScreen() {
     <View style={styles.container}>
       {loading ? (
         <View style={styles.loading}>
-          <ActivityIndicator color="#FF2D8A" />
+          <ActivityIndicator color="#FF418E" />
           <Text style={styles.loadingText}>Загружаем ваши чпоки…</Text>
         </View>
       ) : reports.length === 0 ? (
@@ -187,7 +187,7 @@ export default function MyReportsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     paddingHorizontal: 24
   },
   loading: {
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
     gap: 8
   },
   loadingText: {
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 13
   },
   empty: {
@@ -209,12 +209,12 @@ const styles = StyleSheet.create({
   emptyTitle: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#F9FAFB",
+    color: "#17233B",
     marginBottom: 8
   },
   emptyText: {
     fontSize: 14,
-    color: "#E5E7EB",
+    color: "#35435B",
     textAlign: "center",
     lineHeight: 20
   },
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingVertical: 14,
     paddingHorizontal: 16,
-    backgroundColor: "#0B1220",
+    backgroundColor: "#FFFFFF",
     marginBottom: 10
   },
   cardHeader: {
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     marginBottom: 4
   },
   cardTitle: {
-    color: "#F9FAFB",
+    color: "#17233B",
     fontSize: 15,
     fontWeight: "600"
   },
@@ -257,24 +257,24 @@ const styles = StyleSheet.create({
   },
   categoryText: {
     fontSize: 12,
-    color: "#9CA3AF"
+    color: "#67758C"
   },
   providerText: {
     fontSize: 12,
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   headerRight: {
     alignItems: "flex-end",
     gap: 4
   },
   dateText: {
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 11
   },
   mediaPill: {
     fontSize: 10,
-    color: "#F9FAFB",
-    backgroundColor: "#111827",
+    color: "#17233B",
+    backgroundColor: "#E9E3D7",
     paddingHorizontal: 6,
     paddingVertical: 2,
     borderRadius: 999

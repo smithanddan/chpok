@@ -18,38 +18,38 @@ import { uploadImagesForReport } from "../../lib/media-upload";
 function labelForViolation(value: ViolationType | null): string {
   switch (value) {
     case "dangerous_driving":
-      return "Dangerous driving";
+      return "Опасная езда";
     case "sidewalk_riding":
-      return "Riding on the sidewalk";
+      return "Езда по тротуару";
     case "bad_parking":
-      return "Bad parking";
+      return "Неправильная парковка";
     case "blocked_passage":
-      return "Blocked passage";
+      return "Перекрыт проход";
     case "accident_or_near_miss":
-      return "Accident or near miss";
+      return "ДТП или опасная ситуация";
     case "other":
-      return "Other";
+      return "Другое";
     default:
-      return "Not specified";
+      return "Не указано";
   }
 }
 
 function labelForObjectType(value: ObjectType | null): string {
   switch (value) {
     case "scooter":
-      return "Scooter";
+      return "Самокат";
     case "courier":
-      return "Courier";
+      return "Курьер";
     case "carsharing":
-      return "Carsharing";
+      return "Каршеринг";
     case "taxi":
-      return "Taxi";
+      return "Такси";
     case "car":
-      return "Private car";
+      return "Личный автомобиль";
     case "other":
-      return "Other";
+      return "Другое";
     default:
-      return "Not specified";
+      return "Не указано";
   }
 }
 
@@ -76,8 +76,8 @@ export default function ReviewScreen() {
   const handleAddPhotos = async () => {
     if (!draft.reportId) {
       Alert.alert(
-        "Draft not ready",
-        "We could not find a draft report. Please go back and start a new report."
+        "Черновик не найден",
+        "Вернитесь назад и начните новое обращение."
       );
       return;
     }
@@ -92,15 +92,15 @@ export default function ReviewScreen() {
   const handleSubmit = async () => {
     if (!supabase) {
       Alert.alert(
-        "Backend not configured",
-        "Reporting backend is not configured on this device yet."
+        "Сервис пока не подключён",
+        "На этом устройстве пока нельзя отправить обращение."
       );
       return;
     }
     if (!draft.reportId) {
       Alert.alert(
-        "Draft not ready",
-        "We could not find a draft report. Please go back and start a new report."
+        "Черновик не найден",
+        "Вернитесь назад и начните новое обращение."
       );
       return;
     }
@@ -129,8 +129,8 @@ export default function ReviewScreen() {
       if (updateError) {
         console.error("Failed to update report to submitted", updateError);
         Alert.alert(
-          "Could not send report",
-          "Please try again in a minute. If the problem persists, contact support."
+          "Не получилось отправить",
+          "Попробуйте ещё раз через минуту. Если ошибка повторится, напишите команде."
         );
         return;
       }
@@ -157,7 +157,7 @@ export default function ReviewScreen() {
         style={styles.scroll}
         contentContainerStyle={{ paddingBottom: 24 }}
       >
-        <Text style={styles.heading}>Review your report</Text>
+      <Text style={styles.heading}>Проверьте обращение</Text>
 
         <TouchableOpacity
           style={[
@@ -167,54 +167,53 @@ export default function ReviewScreen() {
           onPress={handleAddPhotos}
           disabled={uploading}
         >
-          <Text style={styles.attachTitle}>Add photos</Text>
+          <Text style={styles.attachTitle}>Добавьте фото</Text>
           <Text style={styles.attachSubtitle}>
-            Attach street photos from your gallery. They help operators see
-            what''s happening.
+            Добавьте фото с улицы: так оператору будет проще понять ситуацию.
           </Text>
           {uploading && (
             <View style={styles.statusRow}>
-              <ActivityIndicator color="#FF2D8A" />
-              <Text style={styles.statusText}>Uploading photos…</Text>
+              <ActivityIndicator color="#FF418E" />
+              <Text style={styles.statusText}>Загружаем фото…</Text>
             </View>
           )}
         </TouchableOpacity>
 
         <View style={styles.row}>
-          <Text style={styles.label}>Violation</Text>
+          <Text style={styles.label}>Нарушение</Text>
           <Text style={styles.value}>{labelForViolation(draft.violationType)}</Text>
         </View>
 
         <View style={styles.row}>
-          <Text style={styles.label}>Object</Text>
+          <Text style={styles.label}>Объект</Text>
           <Text style={styles.value}>{labelForObjectType(draft.objectType)}</Text>
         </View>
 
         <View style={styles.row}>
-          <Text style={styles.label}>Company</Text>
+          <Text style={styles.label}>Сервис</Text>
           <Text style={styles.value}>
             {draft.companyId
-              ? draft.companyNameManual || "Selected company"
-              : draft.companyNameManual || "Not specified"}
+              ? draft.companyNameManual || "Выбранный сервис"
+              : draft.companyNameManual || "Не указан"}
           </Text>
         </View>
 
         <View style={styles.row}>
-          <Text style={styles.label}>Anonymous</Text>
-          <Text style={styles.value}>{draft.isAnonymous ? "Yes" : "No"}</Text>
+          <Text style={styles.label}>Анонимно</Text>
+          <Text style={styles.value}>{draft.isAnonymous ? "Да" : "Нет"}</Text>
         </View>
 
         {draft.description ? (
           <View style={styles.descriptionBlock}>
-            <Text style={styles.label}>Description</Text>
+            <Text style={styles.label}>Описание</Text>
             <Text style={styles.description}>{draft.description}</Text>
           </View>
         ) : null}
 
         {!authReady && (
           <View style={styles.statusRow}>
-            <ActivityIndicator color="#FF2D8A" />
-            <Text style={styles.statusText}>Preparing to send…</Text>
+            <ActivityIndicator color="#FF418E" />
+            <Text style={styles.statusText}>Готовим отправку…</Text>
           </View>
         )}
       </ScrollView>
@@ -226,9 +225,9 @@ export default function ReviewScreen() {
           disabled={submitting || !authReady}
         >
           {submitting ? (
-            <ActivityIndicator color="#020617" />
+            <ActivityIndicator color="#FFF8ED" />
           ) : (
-            <Text style={styles.primaryButtonText}>Send to city team</Text>
+            <Text style={styles.primaryButtonText}>Отправить сигнал</Text>
           )}
         </TouchableOpacity>
       </View>
@@ -242,7 +241,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 24,
     paddingBottom: 16,
-    backgroundColor: "#020617"
+    backgroundColor: "#FFF8ED"
   },
   scroll: {
     flex: 1
@@ -250,16 +249,16 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 22,
     fontWeight: "700",
-    color: "#F9FAFB",
+    color: "#17233B",
     marginBottom: 20
   },
   attachCard: {
     borderRadius: 20,
     paddingVertical: 14,
     paddingHorizontal: 16,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#1F2937",
+    borderColor: "#D9DDE3",
     marginBottom: 16
   },
   attachCardDisabled: {
@@ -268,19 +267,19 @@ const styles = StyleSheet.create({
   attachTitle: {
     fontSize: 15,
     fontWeight: "600",
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   attachSubtitle: {
     marginTop: 4,
     fontSize: 13,
-    color: "#9CA3AF",
+    color: "#67758C",
     lineHeight: 18
   },
   row: {
     borderRadius: 18,
     paddingVertical: 12,
     paddingHorizontal: 16,
-    backgroundColor: "#0B1220",
+    backgroundColor: "#FFFFFF",
     marginBottom: 10,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -288,11 +287,11 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 13,
-    color: "#9CA3AF"
+    color: "#67758C"
   },
   value: {
     fontSize: 14,
-    color: "#F9FAFB",
+    color: "#17233B",
     fontWeight: "500",
     textAlign: "right",
     flexShrink: 1,
@@ -303,13 +302,13 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     paddingVertical: 12,
     paddingHorizontal: 16,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#1F2937"
+    borderColor: "#D9DDE3"
   },
   description: {
     marginTop: 6,
-    color: "#E5E7EB",
+    color: "#35435B",
     fontSize: 14,
     lineHeight: 20
   },
@@ -320,14 +319,14 @@ const styles = StyleSheet.create({
     gap: 8
   },
   statusText: {
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 13
   },
   footer: {
     marginTop: 8
   },
   primaryButton: {
-    backgroundColor: "#FF2D8A",
+    backgroundColor: "#FF418E",
     borderRadius: 999,
     paddingVertical: 18,
     alignItems: "center"
@@ -336,9 +335,8 @@ const styles = StyleSheet.create({
     opacity: 0.7
   },
   primaryButtonText: {
-    color: "#020617",
+    color: "#FFF8ED",
     fontWeight: "700",
     fontSize: 16
   }
 });
-

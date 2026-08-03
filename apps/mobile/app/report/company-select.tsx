@@ -95,18 +95,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 24,
     paddingBottom: 16,
-    backgroundColor: "#020617"
+    backgroundColor: "#FFF8ED"
   },
   headerCard: {
     borderRadius: 24,
     padding: 20,
-    backgroundColor: "#0B1220",
+    backgroundColor: "#FFFFFF",
     marginBottom: 16
   },
   stepLabel: {
     fontSize: 12,
     fontWeight: "600",
-    color: "#9CA3AF",
+    color: "#67758C",
     textTransform: "uppercase",
     letterSpacing: 2
   },
@@ -114,12 +114,12 @@ const styles = StyleSheet.create({
     marginTop: 8,
     fontSize: 20,
     fontWeight: "700",
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   subtitle: {
     marginTop: 6,
     fontSize: 13,
-    color: "#E5E7EB",
+    color: "#35435B",
     lineHeight: 18
   },
   list: {
@@ -133,68 +133,68 @@ const styles = StyleSheet.create({
     marginBottom: 16
   },
   loadingText: {
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 13
   },
   companyCard: {
     borderRadius: 22,
     paddingVertical: 14,
     paddingHorizontal: 16,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#374151",
+    borderColor: "#AAB3C0",
     marginBottom: 10
   },
   companyCardSelected: {
-    backgroundColor: "#FF2D8A22",
-    borderColor: "#FF2D8A"
+    backgroundColor: "#FFE1ED",
+    borderColor: "#FF418E"
   },
   companyName: {
-    color: "#E5E7EB",
+    color: "#35435B",
     fontSize: 15,
     fontWeight: "600"
   },
   companyNameSelected: {
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   companyCategory: {
     marginTop: 2,
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 12
   },
   manualBlock: {
     marginTop: 16,
     borderRadius: 20,
     padding: 16,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#1F2937"
+    borderColor: "#D9DDE3"
   },
   manualLabel: {
-    color: "#E5E7EB",
+    color: "#35435B",
     fontSize: 13,
     marginBottom: 8
   },
   input: {
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: "#374151",
+    borderColor: "#AAB3C0",
     paddingHorizontal: 12,
     paddingVertical: 10,
-    color: "#F9FAFB",
+    color: "#17233B",
     fontSize: 14,
     marginBottom: 10
   },
   secondaryButton: {
     borderRadius: 999,
     borderWidth: 1,
-    borderColor: "#374151",
+    borderColor: "#AAB3C0",
     paddingVertical: 14,
     alignItems: "center",
-    backgroundColor: "#020617"
+    backgroundColor: "#FFF8ED"
   },
   secondaryButtonText: {
-    color: "#E5E7EB",
+    color: "#35435B",
     fontSize: 14,
     fontWeight: "500"
   }

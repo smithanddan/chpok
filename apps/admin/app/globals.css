@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    ui-sans-serif, "Segoe UI", sans-serif;
+  font-family: "Arial", "Helvetica Neue", sans-serif;
+  background: #17233b;
 }
 
+* { box-sizing: border-box; }
+::selection { background: #ffcf45; color: #17233b; }

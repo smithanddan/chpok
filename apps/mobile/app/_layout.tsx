@@ -6,14 +6,14 @@ import { ReportDraftProvider } from "../lib/report-draft-context";
 export default function RootLayout() {
   return (
     <SafeAreaProvider>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <ReportDraftProvider>
         <Stack
           screenOptions={{
-            headerStyle: { backgroundColor: "#020617" },
-            headerTintColor: "#F9FAFB",
+            headerStyle: { backgroundColor: "#FFF8ED" },
+            headerTintColor: "#17233B",
             headerTitleStyle: { fontWeight: "700" },
-            contentStyle: { backgroundColor: "#020617" }
+            contentStyle: { backgroundColor: "#FFF8ED" }
           }}
         >
           <Stack.Screen
@@ -61,4 +61,3 @@ export default function RootLayout() {
     </SafeAreaProvider>
   );
 }
-

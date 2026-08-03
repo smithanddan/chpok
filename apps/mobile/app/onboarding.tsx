@@ -62,7 +62,7 @@ export default function OnboardingScreen() {
   if (initialLoading) {
     return (
       <View style={styles.loading}>
-        <ActivityIndicator color="#FF2D8A" />
+        <ActivityIndicator color="#FF418E" />
         <Text style={styles.loadingText}>Готовим Chpok…</Text>
       </View>
     );
@@ -77,7 +77,7 @@ export default function OnboardingScreen() {
         <View style={styles.logo}>
           <Text style={styles.logoText}>Ч</Text>
         </View>
-        <Text style={styles.badge}>ГОРОДСКОЙ СИГНАЛ</Text>
+        <Text style={styles.badge}>✦ ГОРОДСКОЙ СИГНАЛ</Text>
         <Text style={styles.title}>{step.title}</Text>
         <Text style={styles.text}>{step.text}</Text>
       </View>
@@ -118,7 +118,7 @@ export default function OnboardingScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     paddingHorizontal: 24,
     paddingTop: 80,
     paddingBottom: 32,
@@ -126,31 +126,31 @@ const styles = StyleSheet.create({
   },
   loading: {
     flex: 1,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     alignItems: "center",
     justifyContent: "center",
     gap: 8
   },
   loadingText: {
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 13
   },
   hero: {
     borderRadius: 32,
     padding: 24,
-    backgroundColor: "#0B1220"
+    backgroundColor: "#FFFFFF"
   },
   logo: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: "#FF2D8A",
+    backgroundColor: "#FF418E",
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 16
   },
   logoText: {
-    color: "#020617",
+    color: "#FFF8ED",
     fontSize: 22,
     fontWeight: "800"
   },
@@ -159,18 +159,18 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 3,
     textTransform: "uppercase",
-    color: "#9CA3AF"
+    color: "#67758C"
   },
   title: {
     marginTop: 12,
     fontSize: 24,
     fontWeight: "700",
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   text: {
     marginTop: 12,
     fontSize: 14,
-    color: "#E5E7EB",
+    color: "#35435B",
     lineHeight: 20
   },
   footer: {
@@ -185,20 +185,20 @@ const styles = StyleSheet.create({
     width: 7,
     height: 7,
     borderRadius: 4,
-    backgroundColor: "#1F2937"
+    backgroundColor: "#D9DDE3"
   },
   dotActive: {
-    backgroundColor: "#FF2D8A",
+    backgroundColor: "#FF418E",
     width: 16
   },
   primaryButton: {
-    backgroundColor: "#FF2D8A",
+    backgroundColor: "#FF418E",
     borderRadius: 999,
     paddingVertical: 16,
     alignItems: "center"
   },
   primaryText: {
-    color: "#020617",
+    color: "#FFF8ED",
     fontWeight: "700",
     fontSize: 16
   },
@@ -207,8 +207,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8
   },
   secondaryText: {
-    color: "#9CA3AF",
+    color: "#67758C",
     fontSize: 13
   }
 });
-

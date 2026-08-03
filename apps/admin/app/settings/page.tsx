@@ -1,15 +1,13 @@
 import { CrmShell } from "../../components/crm-shell";
+import { EmptyWorkspace } from "../../components/empty-workspace";
 
 export default function SettingsPage() {
   return (
     <CrmShell
       pageTitle="Настройки"
-      pageDescription="Базовые настройки админки Chpok: роли, уведомления и интеграции появятся здесь позже."
+      pageDescription="Правила команды, уведомления и связи с городскими сервисами."
     >
-      <div className="flex h-full items-center justify-center text-sm text-slate-400">
-        Настройки пока не реализованы. Страница подготовлена под будущие параметры системы.
-      </div>
+      <EmptyWorkspace eyebrow="настройка процесса" title="Сделаем реакцию города предсказуемой." text="Здесь появятся роли операторов, правила модерации, SLA и интеграции. Всё, что делает путь сигнала прозрачным." />
     </CrmShell>
   );
 }
-

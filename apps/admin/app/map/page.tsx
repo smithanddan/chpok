@@ -25,10 +25,10 @@ export default function MapPage({
   return (
     <CrmShell
       pageTitle="Карта"
-      pageDescription="Простая карта для проверки координат инцидентов. Далее сюда можно добавить полноценный тайл-сервис и кластеризацию."
+      pageDescription="Проверяйте адреса, горячие точки и маршруты передачи сигналов."
     >
-      <div className="flex h-full flex-col gap-3 text-sm text-slate-200">
-        <div className="rounded-md border border-slate-900 bg-slate-950/80 px-3 py-2 text-xs text-slate-300">
+      <div className="flex min-h-[420px] flex-col gap-3 text-sm text-slate-200">
+        <div className="rounded-2xl bg-[#17233b] px-5 py-4 text-xs text-slate-300">
           {hasPoint ? (
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div>
@@ -59,15 +59,13 @@ export default function MapPage({
           )}
         </div>
 
-        <div className="flex-1 rounded-xl border border-slate-900 bg-slate-950/80">
-          <div className="flex h-full items-center justify-center text-xs text-slate-500">
-            Здесь позже появится настоящий виджет карты (например, Leaflet или
-            Mapbox) с точками инцидентов.
-          </div>
+        <div className="relative flex-1 overflow-hidden rounded-[22px] bg-[#c7e9f7]">
+          <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(#17233b_1px,transparent_1px),linear-gradient(90deg,#17233b_1px,transparent_1px)] [background-size:42px_42px]" />
+          <span className="absolute left-[18%] top-[25%] grid h-12 w-12 place-items-center rounded-full bg-[#ff418e] text-lg text-[#fff8ed] shadow-[4px_4px_0_#17233b]">!</span>
+          <span className="absolute bottom-[20%] right-[24%] grid h-9 w-9 place-items-center rounded-full bg-[#ffcf45] text-[#17233b]">✦</span>
+          <div className="absolute inset-0 grid place-items-center text-center"><div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-[#536177]">карта сигналов</p><p className="mt-2 max-w-xs text-lg font-bold leading-tight tracking-[-.04em] text-[#17233b]">Здесь появятся точки, когда в очереди будут обращения.</p></div></div>
         </div>
       </div>
     </CrmShell>
   );
 }
-
-

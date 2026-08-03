@@ -22,8 +22,8 @@ export default function ReportCaptureScreen() {
 
     if (!supabase) {
       Alert.alert(
-        "Backend not configured",
-        "Reporting backend is not configured on this device yet."
+        "Сервис пока не подключён",
+        "На этом устройстве пока нельзя отправлять обращения."
       );
       return;
     }
@@ -43,8 +43,8 @@ export default function ReportCaptureScreen() {
       if (error || !data) {
         console.error("Failed to create draft report", error);
         Alert.alert(
-          "Could not start report",
-          "Please try again in a minute. If the problem persists, contact support."
+          "Не получилось начать обращение",
+          "Попробуйте ещё раз через минуту. Если ошибка повторится, напишите команде."
         );
         return;
       }
@@ -58,17 +58,16 @@ export default function ReportCaptureScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.stepLabel}>Step 1 of 4</Text>
-        <Text style={styles.title}>What happened?</Text>
+        <Text style={styles.stepLabel}>Шаг 1 из 4</Text>
+        <Text style={styles.title}>Что случилось?</Text>
         <Text style={styles.subtitle}>
-          You will add photos and details on the next screens. For now, start
-          with the type of situation.
+          Фото и детали добавим на следующих шагах. Начните с типа ситуации.
         </Text>
       </View>
 
       <View style={styles.actions}>
         <TouchableOpacity style={styles.primaryButton} onPress={handleStart}>
-          <Text style={styles.primaryButtonText}>Start new report</Text>
+          <Text style={styles.primaryButtonText}>Начать обращение</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -81,18 +80,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 32,
     paddingBottom: 24,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     justifyContent: "space-between"
   },
   card: {
     borderRadius: 28,
     padding: 24,
-    backgroundColor: "#0B1220"
+    backgroundColor: "#FFFFFF"
   },
   stepLabel: {
     fontSize: 12,
     fontWeight: "600",
-    color: "#9CA3AF",
+    color: "#67758C",
     textTransform: "uppercase",
     letterSpacing: 2
   },
@@ -100,27 +99,26 @@ const styles = StyleSheet.create({
     marginTop: 12,
     fontSize: 22,
     fontWeight: "700",
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   subtitle: {
     marginTop: 8,
     fontSize: 14,
-    color: "#E5E7EB",
+    color: "#35435B",
     lineHeight: 20
   },
   actions: {
     gap: 16
   },
   primaryButton: {
-    backgroundColor: "#FF2D8A",
+    backgroundColor: "#FF418E",
     borderRadius: 999,
     paddingVertical: 18,
     alignItems: "center"
   },
   primaryButtonText: {
-    color: "#020617",
+    color: "#FFF8ED",
     fontWeight: "700",
     fontSize: 16
   }
 });
-

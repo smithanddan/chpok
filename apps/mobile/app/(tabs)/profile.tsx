@@ -56,7 +56,7 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     paddingHorizontal: 24,
     paddingTop: 40
   },
@@ -69,24 +69,24 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: "#FF2D8A",
+    backgroundColor: "#FF418E",
     alignItems: "center",
     justifyContent: "center",
     marginRight: 12
   },
   avatarText: {
-    color: "#020617",
+    color: "#FFF8ED",
     fontWeight: "700",
     fontSize: 20
   },
   name: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   meta: {
     fontSize: 13,
-    color: "#9CA3AF",
+    color: "#67758C",
     marginTop: 2
   },
   section: {
@@ -95,30 +95,30 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 14,
     fontWeight: "600",
-    color: "#E5E7EB",
+    color: "#35435B",
     marginBottom: 8
   },
   card: {
     borderRadius: 18,
     padding: 14,
-    backgroundColor: "#0B1220"
+    backgroundColor: "#FFFFFF"
   },
   cardTitle: {
     fontSize: 14,
     fontWeight: "600",
-    color: "#F9FAFB",
+    color: "#17233B",
     marginBottom: 4
   },
   cardText: {
     fontSize: 13,
-    color: "#9CA3AF",
+    color: "#67758C",
     lineHeight: 18
   },
   links: {
     borderRadius: 18,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#1F2937"
+    borderColor: "#D9DDE3"
   },
   linkRow: {
     paddingHorizontal: 14,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   linkText: {
     fontSize: 13,
-    color: "#E5E7EB"
+    color: "#35435B"
   }
 });
 

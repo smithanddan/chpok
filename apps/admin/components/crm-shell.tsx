@@ -1,139 +1,50 @@
- "use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { Menu, MapPin, Settings, Users, Building2, LayoutGrid, AlertTriangle } from "lucide-react";
+import { Building2, LayoutGrid, MapPin, Menu, Settings, TriangleAlert, Users } from "lucide-react";
 
-type NavItem = {
-  label: string;
-  href: string;
-  icon: React.ComponentType<{ className?: string }>;
-};
+type NavItem = { label: string; href: string; icon: React.ComponentType<{ className?: string }> };
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Дашборд", href: "/dashboard", icon: LayoutGrid },
-  { label: "Инциденты", href: "/incidents", icon: AlertTriangle },
+  { label: "Обзор", href: "/dashboard", icon: LayoutGrid },
+  { label: "Инциденты", href: "/incidents", icon: TriangleAlert },
   { label: "Карта", href: "/map", icon: MapPin },
   { label: "Пользователи", href: "/users", icon: Users },
   { label: "Компании", href: "/companies", icon: Building2 },
   { label: "Настройки", href: "/settings", icon: Settings }
 ];
 
-export function CrmShell({ children, pageTitle, pageDescription }: { children: ReactNode; pageTitle: string; pageDescription?: string; }) {
+export function CrmShell({ children, pageTitle, pageDescription }: { children: ReactNode; pageTitle: string; pageDescription?: string }) {
   const pathname = usePathname();
-
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-50">
-      {/* Sidebar */}
-      <aside className="hidden w-64 shrink-0 border-r border-slate-800 bg-slate-950/80 px-4 py-5 lg:flex lg:flex-col">
-        <div className="mb-6 flex items-center gap-2 px-1">
-          <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-chpok-pink text-xs font-semibold text-slate-950">
-            Ч
-          </div>
-          <div className="leading-tight">
-            <p className="text-sm font-semibold tracking-tight">Chpok CRM</p>
-            <p className="text-[11px] text-slate-400">Модерация инцидентов</p>
-          </div>
+    <div className="min-h-screen bg-[#17233b] text-[#fff8ed]">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#17233b]/95 px-4 backdrop-blur lg:px-8">
+        <div className="mx-auto flex h-[76px] max-w-[1440px] items-center gap-6">
+          <Link href="/dashboard" className="flex items-center gap-2.5" aria-label="ЧПОК CRM — обзор">
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-[#ff418e] text-base font-bold text-[#17233b]">✦</span>
+            <span className="leading-none"><b className="block text-[18px] tracking-[-0.08em]">чпок</b><i className="mt-1 block text-[9px] font-bold uppercase tracking-[0.18em] text-[#b7c7dd] not-italic">операторская</i></span>
+          </Link>
+          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex" aria-label="Навигация CRM">
+            {NAV_ITEMS.map((item) => {
+              const Icon = item.icon;
+              const active = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
+              return <Link key={item.href} href={item.href} className={`inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-semibold transition ${active ? "bg-[#fff8ed] text-[#17233b]" : "text-[#c0cee0] hover:bg-white/10 hover:text-white"}`}><Icon className="h-3.5 w-3.5" />{item.label}</Link>;
+            })}
+          </nav>
+          <div className="ml-auto flex items-center gap-3"><span className="hidden items-center gap-1.5 text-[11px] text-[#c0cee0] sm:flex"><i className="h-2 w-2 rounded-full bg-[#ffcf45]" />смена активна</span><span className="grid h-9 w-9 place-items-center rounded-2xl bg-[#ffcf45] text-[11px] font-bold text-[#17233b]">ОП</span><button className="grid h-9 w-9 place-items-center rounded-full border border-white/15 lg:hidden" aria-label="Меню"><Menu className="h-4 w-4" /></button></div>
         </div>
-
-        <nav className="space-y-1 text-sm">
-          {NAV_ITEMS.map((item) => {
-            const Icon = item.icon;
-            const isActive =
-              pathname === item.href ||
-              (item.href !== "/dashboard" && pathname.startsWith(item.href));
-
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`flex items-center gap-2 rounded-lg px-2.5 py-2 transition-colors ${
-                  isActive
-                    ? "bg-slate-900 text-slate-50"
-                    : "text-slate-400 hover:bg-slate-900/70 hover:text-slate-100"
-                }`}
-              >
-                <Icon className="h-4 w-4" />
-                <span className="truncate">{item.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
-
-        <div className="mt-auto pt-4 text-[11px] text-slate-500">
-          Сессия оператора
+      </header>
+      <main className="px-4 py-7 lg:px-8 lg:py-10">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="mb-7 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#ffcf45]">операторский центр / чпок</p><h1 className="text-4xl font-bold leading-none tracking-[-0.07em] text-[#fff8ed] sm:text-5xl">{pageTitle}</h1>{pageDescription ? <p className="mt-3 max-w-2xl text-sm leading-6 text-[#c0cee0]">{pageDescription}</p> : null}</div>
+            <span className="w-fit rounded-full border border-white/15 px-3 py-1.5 text-[11px] font-semibold text-[#c0cee0]">обновлено только что</span>
+          </div>
+          <div className="rounded-[28px] bg-[#fff8ed] p-3 text-[#17233b] shadow-[12px_12px_0_rgba(255,65,142,.38)] sm:p-5">{children}</div>
         </div>
-      </aside>
-
-      {/* Main column */}
-      <div className="flex min-h-screen flex-1 flex-col">
-        {/* Topbar */}
-        <header className="flex h-14 items-center justify-between border-b border-slate-800 bg-slate-950/80 px-3 lg:px-6">
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              type="button"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-200"
-              aria-label="Меню"
-            >
-              <Menu className="h-4 w-4" />
-            </button>
-            <span className="text-sm font-semibold tracking-tight">Chpok CRM</span>
-          </div>
-
-          <div className="hidden flex-1 items-center gap-3 lg:flex">
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                Операционный центр
-              </p>
-              <p className="text-sm font-medium text-slate-100">
-                {pageTitle}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-1 items-center justify-end gap-3 lg:flex-none">
-            <div className="hidden w-full max-w-xs items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs text-slate-300 shadow-sm shadow-slate-950/30 sm:flex">
-              <span className="text-[11px] text-slate-500">Поиск</span>
-              <span className="line-clamp-1 flex-1 text-left text-[11px] text-slate-400">
-                ID, адрес, компания, пользователь…
-              </span>
-              <span className="rounded-full bg-slate-800 px-1.5 py-0.5 text-[10px] text-slate-400">
-                ⌘K
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-chpok-pink to-slate-50 text-xs font-semibold text-slate-950">
-                ОП
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* Content */}
-        <main className="flex-1 bg-slate-950/95 px-3 pb-6 pt-3 lg:px-6 lg:pt-4">
-          <div className="mx-auto flex h-full max-w-6xl flex-col gap-3">
-            <div className="lg:hidden">
-              <h1 className="text-base font-semibold text-slate-100">
-                {pageTitle}
-              </h1>
-              {pageDescription ? (
-                <p className="mt-1 text-xs text-slate-400">{pageDescription}</p>
-              ) : null}
-            </div>
-            {pageDescription && (
-              <div className="hidden rounded-xl border border-slate-900 bg-slate-900/60 px-4 py-2 text-xs text-slate-300 lg:block">
-                {pageDescription}
-              </div>
-            )}
-            <div className="flex-1 rounded-xl border border-slate-900 bg-slate-950/80 p-3 lg:p-4">
-              {children}
-            </div>
-          </div>
-        </main>
-      </div>
+      </main>
     </div>
   );
 }
-

@@ -15,10 +15,10 @@ export default function ViolationTypeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.headerCard}>
-        <Text style={styles.stepLabel}>Step 2 of 4</Text>
-        <Text style={styles.title}>What kind of violation?</Text>
+        <Text style={styles.stepLabel}>Шаг 2 из 4</Text>
+        <Text style={styles.title}>Что именно не так?</Text>
         <Text style={styles.subtitle}>
-          Choose the closest option. You can refine details later.
+          Выберите самый близкий вариант. Детали можно уточнить позже.
         </Text>
       </View>
 
@@ -46,7 +46,7 @@ export default function ViolationTypeScreen() {
           <TouchableOpacity
             style={styles.secondaryButton}
           >
-            <Text style={styles.secondaryButtonText}>Skip for now</Text>
+            <Text style={styles.secondaryButtonText}>Пропустить</Text>
           </TouchableOpacity>
         </Link>
       </View>
@@ -60,18 +60,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 24,
     paddingBottom: 16,
-    backgroundColor: "#020617"
+    backgroundColor: "#FFF8ED"
   },
   headerCard: {
     borderRadius: 24,
     padding: 20,
-    backgroundColor: "#0B1220",
+    backgroundColor: "#FFFFFF",
     marginBottom: 16
   },
   stepLabel: {
     fontSize: 12,
     fontWeight: "600",
-    color: "#9CA3AF",
+    color: "#67758C",
     textTransform: "uppercase",
     letterSpacing: 2
   },
@@ -79,12 +79,12 @@ const styles = StyleSheet.create({
     marginTop: 8,
     fontSize: 20,
     fontWeight: "700",
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   subtitle: {
     marginTop: 6,
     fontSize: 13,
-    color: "#E5E7EB",
+    color: "#35435B",
     lineHeight: 18
   },
   list: {
@@ -95,22 +95,22 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     paddingVertical: 12,
     paddingHorizontal: 16,
-    backgroundColor: "#020617",
+    backgroundColor: "#FFF8ED",
     borderWidth: 1,
-    borderColor: "#374151",
+    borderColor: "#AAB3C0",
     marginBottom: 10
   },
   chipSelected: {
-    backgroundColor: "#FF2D8A22",
-    borderColor: "#FF2D8A"
+    backgroundColor: "#FFE1ED",
+    borderColor: "#FF418E"
   },
   chipLabel: {
-    color: "#E5E7EB",
+    color: "#35435B",
     fontSize: 15,
     fontWeight: "500"
   },
   chipLabelSelected: {
-    color: "#F9FAFB"
+    color: "#17233B"
   },
   footer: {
     marginTop: 8
@@ -118,15 +118,14 @@ const styles = StyleSheet.create({
   secondaryButton: {
     borderRadius: 999,
     borderWidth: 1,
-    borderColor: "#374151",
+    borderColor: "#AAB3C0",
     paddingVertical: 14,
     alignItems: "center",
-    backgroundColor: "#020617"
+    backgroundColor: "#FFF8ED"
   },
   secondaryButtonText: {
-    color: "#E5E7EB",
+    color: "#35435B",
     fontSize: 14,
     fontWeight: "500"
   }
 });
-
