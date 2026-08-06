@@ -82,6 +82,16 @@ def index() -> FileResponse:
     return FileResponse("static/index.html")
 
 
+@app.get("/yandex_330f638fdcedaa6f.html")
+def yandex_webmaster_verification() -> FileResponse:
+    return FileResponse("static/yandex_330f638fdcedaa6f.html")
+
+
+@app.get("/yandex_0a4c2f3582f09ed1.html")
+def yandex_webmaster_verification_new() -> FileResponse:
+    return FileResponse("static/yandex_0a4c2f3582f09ed1.html")
+
+
 @app.post("/integrations/navixy/admin/fetch-user", response_model=NavixyAdminFetchResponse)
 def navixy_admin_fetch_user(payload: NavixyAdminFetchRequest) -> NavixyAdminFetchResponse:
     admin_hash = monitoring_api.navixy_panel_auth(
