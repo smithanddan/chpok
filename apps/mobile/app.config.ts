@@ -1,4 +1,4 @@
-import { ExpoConfig } from "expo-config";
+import type { ExpoConfig } from "expo/config";
 
 const defineConfig = (): ExpoConfig => ({
   name: "Chpok",
@@ -18,7 +18,12 @@ const defineConfig = (): ExpoConfig => ({
   },
   assetBundlePatterns: ["**/*"],
   ios: {
-    supportsTablet: true
+    bundleIdentifier: "app.chpok",
+    supportsTablet: true,
+    infoPlist: {
+      NSCameraUsageDescription: "Камера нужна только во время запущенной сессии Патруля.",
+      NSLocationWhenInUseUsageDescription: "Координаты наблюдателя помогают проверить место события."
+    }
   },
   android: {
     adaptiveIcon: {
@@ -29,12 +34,10 @@ const defineConfig = (): ExpoConfig => ({
   web: {
     favicon: "./assets/favicon.png"
   },
-  plugins: ["expo-router"],
-  extra: {
-    eas: {
-      projectId: "chpok-placeholder-project-id"
-    }
-  }
+  plugins: [
+    "expo-router",
+    ["expo-image-picker", { photosPermission: "Разрешите выбрать видео для локальной проверки.", microphonePermission: false }]
+  ]
 });
 
 export default defineConfig;

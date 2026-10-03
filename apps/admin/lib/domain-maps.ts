@@ -21,6 +21,7 @@ export const VIOLATION_TYPE_LABELS: Record<string, string> = {
   trash: "Мусор",
   road: "Дороги",
   lighting: "Освещение",
+  scooter_double_riding: "Предполагаемая поездка вдвоём",
   other: "Другое"
 };
 
@@ -30,6 +31,6 @@ export const OBJECT_TYPE_LABELS: Record<string, string> = {
   building: "Здание",
   playground: "Площадка",
   transport: "Транспорт",
+  scooter: "Самокат",
   other: "Другое"
 };
-

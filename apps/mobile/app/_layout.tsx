@@ -56,6 +56,8 @@ export default function RootLayout() {
             name="reports/[id]"
             options={{ title: "Обращение" }}
           />
+          <Stack.Screen name="patrol/index" options={{ title: "ЧПОК Патруль" }} />
+          <Stack.Screen name="patrol/review" options={{ title: "Проверка события" }} />
         </Stack>
       </ReportDraftProvider>
     </SafeAreaProvider>

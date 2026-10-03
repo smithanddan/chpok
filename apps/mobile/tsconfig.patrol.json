@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["app/patrol/**/*.ts", "app/patrol/**/*.tsx", "lib/patrol/**/*.ts", "app.config.ts"],
+  "exclude": ["node_modules", "ios"]
+}

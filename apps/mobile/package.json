@@ -5,16 +5,22 @@
   "main": "expo-router/entry",
   "scripts": {
     "dev": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "typecheck:patrol": "tsc -p tsconfig.patrol.json --noEmit"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "1.23.1",
     "@supabase/supabase-js": "^2.99.0",
     "expo": "^52.0.0",
+    "expo-av": "~15.0.0",
+    "expo-dev-client": "~5.0.20",
+    "expo-file-system": "~18.0.0",
     "expo-image-picker": "~16.0.0",
+    "expo-location": "~18.0.0",
     "expo-router": "~4.0.22",
     "expo-status-bar": "~2.0.0",
     "react": "18.3.1",

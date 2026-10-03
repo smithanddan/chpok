@@ -25,6 +25,11 @@ export default function HomeScreen() {
             <Text style={styles.secondaryButtonText}>Мои обращения</Text>
           </TouchableOpacity>
         </Link>
+        <Link href="/patrol" asChild>
+          <TouchableOpacity style={styles.secondaryButton}>
+            <Text style={styles.secondaryButtonText}>ЧПОК Патруль</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
 
       <View style={styles.info}>

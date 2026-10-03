@@ -234,10 +234,10 @@ CREATE POLICY report_media_select_own ON public.report_media
   USING (user_id = auth.uid() OR is_moderator_or_admin());
 
 -- report_status_history: users read for own reports; mods/admins read and create all
-CREATE POLICY report_status_history_select ON public.report_status_history h
+CREATE POLICY report_status_history_select ON public.report_status_history
   FOR SELECT TO authenticated
   USING (
-    EXISTS (SELECT 1 FROM public.reports r WHERE r.id = h.report_id AND r.user_id = auth.uid())
+    EXISTS (SELECT 1 FROM public.reports r WHERE r.id = report_status_history.report_id AND r.user_id = auth.uid())
     OR is_moderator_or_admin()
   );
 
